@@ -1,0 +1,13 @@
+---
+title: "Authentication"
+---
+
+Vapi relies on API keys for secure authentication.
+
+**Keep your API key a secret.** Never share it with others or reveal it in client-side code such as browsers or apps. Route all production requests through your own backend server, where you can safely load your API key from an environment variable or a key management service.
+
+To authenticate, include your API key in the Authorization HTTP header for all API requests, using the following format:
+
+```bash
+'Authorization': 'Bearer VAPI_API_KEY'
+```

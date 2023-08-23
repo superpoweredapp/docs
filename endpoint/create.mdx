@@ -1,0 +1,82 @@
+---
+title: "Create Call"
+api: "POST https://api.vapi.ai/call"
+description: "This endpoint creates a new call"
+---
+
+### Body
+
+<ParamField body="to" type="string">
+  This is the number to call.
+</ParamField>
+
+<ParamField body="from" type="string">
+  This is the number to call from.
+</ParamField>
+
+<ParamField body="forwardingPhone" type="string">
+  This is the number AI will forward to if it runs into any issues.
+</ParamField>
+
+<ParamField body="callbackUrl" type="string">
+  This is the URL of your backend for function calling and call status updates.
+</ParamField>
+
+<ParamField body="twilioAccountSid" type="string">
+  This is your Twilio's AccountSid.
+</ParamField>
+
+<ParamField body="twilioAuthToken" type="string">
+  This is your Twilio's AuthToken.
+</ParamField>
+
+<ParamField body="model" type="string">
+  This is the OpenAI model to use. Options are gpt-3.5-turbo, gpt-3.5-turbo-16k,
+  gpt-4, and gpt-4-32k.
+</ParamField>
+
+<ParamField body="startTalking" type="boolean">
+  This controls whether AI speaks first.
+</ParamField>
+
+<ParamField body="context" type="boolean">
+  This is the context to give to the AI.
+</ParamField>
+
+### Request headers
+
+<ParamField
+  header="Content-Type"
+  required
+  default="application/json"
+  placeholder="application/json"
+></ParamField>
+
+### Response
+
+<ResponseField name="success" type="number">
+  Indicates whether the call was successful. 1 if successful, 0 if not.
+</ResponseField>
+
+<RequestExample>
+
+```bash Request
+curl --request POST 'https://api.vapi.ai/call' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <token>' \
+--data-raw '{
+    "current_token": ""
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "success": 1
+}
+```
+
+</ResponseExample>
