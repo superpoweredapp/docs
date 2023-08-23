@@ -6,61 +6,74 @@ description: "This endpoint creates a new call"
 
 ### Body
 
-<ParamField body="to" type="string">
+<ParamField body="context" type="string" default="">
+  This is the context to give to the AI.
+</ParamField>
+
+<ParamField
+  body="to"
+  type="string"
+  required
+  placeholder="+14155555555"
+  initialValue="+14155555555"
+>
   This is the number to call.
 </ParamField>
 
-<ParamField body="from" type="string">
+<ParamField
+  body="from"
+  type="string"
+  placeholder="+14152126194"
+  initialValue="+14152126194"
+>
   This is the number to call from. Ensure this number is owned by your Twilio
   account.
 </ParamField>
 
-<ParamField body="forwardingPhone" type="string">
-  This is the number AI will forward to if it runs into any issues.
-</ParamField>
-
-<ParamField body="callbackUrl" type="string">
-  This is the URL of your backend for function calling and call status updates.
-</ParamField>
-
-<ParamField body="twilioAccountSid" type="string">
+<ParamField body="twilioAccountSid" type="string" required>
   This is your Twilio's AccountSid.
 </ParamField>
 
-<ParamField body="twilioAuthToken" type="string">
+<ParamField body="twilioAuthToken" type="string" required>
   This is your Twilio's AuthToken.
 </ParamField>
 
-<ParamField body="model" type="string">
+<ParamField body="forwardingPhone" type="string" default="null">
+  This is the number AI will transfer to if it runs into any issues.
+</ParamField>
+
+<ParamField body="callbackUrl" type="string" default="null">
+  This is the URL of your backend for function calling and call status updates.
+</ParamField>
+
+<ParamField body="model" type="string" default="gpt-4">
   This is the OpenAI model to use. Options are gpt-3.5-turbo, gpt-3.5-turbo-16k,
   gpt-4, and gpt-4-32k. GPT-4 is strongly recommended.
 </ParamField>
 
-<ParamField body="startTalking" type="boolean">
+<ParamField body="startTalking" type="boolean" default="false">
   This controls whether AI speaks first.
 </ParamField>
 
-<ParamField body="context" type="string">
-  This is the context to give to the AI.
-</ParamField>
-
-<ParamField body="functions" type="array" >
+<ParamField body="functions" type="array" default="null">
   These are the functions that the AI can invoke during the call.
 
   <Expandable title="properties">
 
     <ResponseField name="name" type="string">
-      The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
+      The name of the function to be called. Must be a-z, A-Z, 0-9, or contain
+      underscores and dashes, with a maximum length of 64.
     </ResponseField>
 
     <ResponseField name="description" type="boolean">
-      A description of what the function does, used by the AI to choose when and how to call the function.
+      A description of what the function does, used by the AI to choose when and how
+      to call the function.
     </ResponseField>
 
     <ResponseField name="parameters" type="object">
-      The parameters the functions accepts, described as a JSON Schema object. See the [OpenAI guide](https://platform.openai.com/docs/guides/gpt/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format.
+      The parameters the functions accepts, described as a JSON Schema object. See the [OpenAI guide](https://platform.openai.com/docs/guides/gpt/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema) for documentation about the format.
 
-      To describe a function that accepts no parameters, provide the value {"type": "object", "properties": {}}.
+      To describe a function that accepts no parameters, provide the value `{"type": "object", "properties": {}}`.
     </ResponseField>
 
   </Expandable>
@@ -71,54 +84,14 @@ description: "This endpoint creates a new call"
 <ParamField
   header="Content-Type"
   required
-  default="application/json"
   placeholder="application/json"
 ></ParamField>
 
 ### Response
 
 <ResponseField name="status" type="string">
-  Indicates whether the call was successful. ok for successful.
+  Indicates whether the call was successful.
 </ResponseField>
-
-<RequestExample>
-
-```bash Request Example
-curl --request POST 'https://api.vapi.ai/call' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer <token>' \
---data-raw '{
-  {
-    "to": "+14155555555",
-    "from": "+14156666666",
-    "forwardingPhone": "+14157777777",
-    "callbackUrl": "https://your-callback-url",
-    "twilioAccountSid": "your-twilio-account-sid",
-    "twilioAuthToken": "your-twilio-auth-token",
-    "model": "gpt-4",
-    "startTalking": false,
-    "context": "You're an assistant calling RCD barbershop on behalf of Jordan to book a haircut for anytime today or tomorrow. If asked, his phone number is 415-777-7777.",
-    "functions": [
-        {
-            "name": "addToCalendar",
-            "description": "Use to add the appointment in Jordan's calendar.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                  "time": {
-                    "type": "string",
-                    "description": "The time of the appointment, in the format YYYY-MM-DD HH:MM:SS."
-                  },
-                },
-                "required": ["time"],
-            }
-        }
-    ]
-  }
-}'
-```
-
-</RequestExample>
 
 <ResponseExample>
 
