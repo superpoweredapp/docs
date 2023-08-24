@@ -21,18 +21,13 @@
   "navigation": [
     {
       "group": "",
-      "pages": ["welcome", "authenticate", "call", "support"]
+      "pages": ["welcome", "auth", "call", "support"]
     }
   ],
   "modeToggle": {
     "isHidden": true
   },
   "api": {
-    "baseUrl": "https://api.vapi.ai",
-    "auth": {
-      "method": "bearer",
-      "name": "API Token",
-      "inputPrefix": "Bearer"
-    }
+    "baseUrl": "https://api.vapi.ai"
   }
 }
