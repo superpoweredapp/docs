@@ -18,26 +18,15 @@
       "to": "#9563FF"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:team@superpowered.me"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Back to Website",
-    "url": "https://vapi.ai"
-  },
   "navigation": [
     {
-      "group": "API Overview",
-      "pages": ["authentication"]
-    },
-    {
-      "group": "API Endpoints",
-      "pages": ["endpoint/create"]
+      "group": "",
+      "pages": ["welcome", "authenticate", "call", "support"]
     }
   ],
+  "modeToggle": {
+    "isHidden": true
+  },
   "api": {
     "baseUrl": "https://api.vapi.ai",
     "auth": {

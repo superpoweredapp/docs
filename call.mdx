@@ -1,35 +1,40 @@
 ---
-title: "Create Call"
+title: "Try starting a call 📞"
 api: "POST https://api.vapi.ai/call"
 description: "This endpoint creates a new call"
+icon: "circle-2"
+iconType: "solid"
+sidebarTitle: "Try now"
 ---
 
 ### Body
 
-<ParamField body="context" type="string" default="">
-  This is the context to give to the AI.
-</ParamField>
-
-<ParamField
-  body="to"
-  type="string"
-  required
-  placeholder="+14155555555"
-  initialValue="+14155555555"
->
+<ParamField body="to" type="string" required>
   This is the number to call.
 </ParamField>
 
-<ParamField body="from" type="string" placeholder="+14152126194">
+<ParamField body="context" type="string" default="">
+  This controls the AI's objective and all the information around the objective.
+</ParamField>
+
+<ParamField body="from" type="string" default="Uses our credentials if empty.">
   This is the number to call from. Ensure this number is owned by your Twilio
   account.
 </ParamField>
 
-<ParamField body="twilioAccountSid" type="string">
+<ParamField
+  body="twilioAccountSid"
+  type="string"
+  default="Uses our credentials if empty."
+>
   This is your Twilio's AccountSid.
 </ParamField>
 
-<ParamField body="twilioAuthToken" type="string">
+<ParamField
+  body="twilioAuthToken"
+  type="string"
+  default="Uses our credentials if empty."
+>
   This is your Twilio's AuthToken.
 </ParamField>
 
@@ -44,10 +49,6 @@ description: "This endpoint creates a new call"
 <ParamField body="model" type="string" default="gpt-4">
   This is the OpenAI model to use. Options are gpt-3.5-turbo, gpt-3.5-turbo-16k,
   gpt-4, and gpt-4-32k. GPT-4 is strongly recommended.
-</ParamField>
-
-<ParamField body="startTalking" type="boolean" default="false">
-  This controls whether AI speaks first.
 </ParamField>
 
 <ParamField body="functions" type="array" default="null">
@@ -74,12 +75,17 @@ description: "This endpoint creates a new call"
   </Expandable>
 </ParamField>
 
+<ParamField body="startTalking" type="boolean" default="false">
+  This controls whether AI speaks first.
+</ParamField>
+
 ### Request headers
 
 <ParamField
   header="Content-Type"
   required
   placeholder="application/json"
+  initialValue="application/json"
 ></ParamField>
 
 ### Response
