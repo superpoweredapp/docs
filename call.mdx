@@ -1,146 +1,23 @@
 ---
-title: "Use the API to call yourself 📞"
+title: "Try calling yourself now 📞"
 icon: "circle-2"
 iconType: "solid"
 sidebarTitle: "Try the API"
-api: "POST https://api.vapi.ai/call"
-description: "After you [get access](/auth), fill the `token`, enter your number in `to`, and click `Send Request`. You'll receive a call from Vapi."
+api: "POST /call"
+description: "After you [get access](/auth), fill in your `token`, fill in your number in `to`, and click `Send Request`. You'll receive a call from Vapi."
 ---
 
-### Request Body
+<Tip>
+  Next, try calling yourself with a [custom
+  agent](/api-reference/call/create.transient).
+</Tip>
+
+#### Request
 
 <ParamField body="token" type="string" required>
-  This is your API token.
+  This is the token you were emailed in the [previous step](/auth).
 </ParamField>
 
 <ParamField body="to" type="string" required>
   This is the number to call.
 </ParamField>
-
-<ParamField body="context" type="string" default="">
-  This is the AI's objective and the context around the objective.
-</ParamField>
-
-<ParamField body="from" type="string" default="Uses our credentials if empty.">
-  This is the number to call from. Ensure this number is owned by your Twilio
-  account.
-</ParamField>
-
-<ParamField
-  body="twilioAccountSid"
-  type="string"
-  default="Uses our credentials if empty."
->
-  This is your Twilio AccountSid.
-</ParamField>
-
-<ParamField
-  body="twilioAuthToken"
-  type="string"
-  default="Uses our credentials if empty."
->
-  This is your Twilio AuthToken.
-</ParamField>
-
-<ParamField body="forwardingNumber" type="string" default="null">
-  This is the number AI will transfer to if it runs into any issues.
-</ParamField>
-
-<ParamField body="callbackUrl" type="string" default="null">
-  This is the URL Vapi will send POST requests to for function calling and end-of-call reports.
-
-For function calling, respond with a JSON object of the result. If empty, return `{}`.
-
-  <Expandable title="Function Calling">
-
-    <ResponseField name="name" type="string">
-      This is the name of the function AI wants to invoke.
-    </ResponseField>
-
-    <ResponseField name="arguments" type="object">
-      These are the arguments to the function, as a JSON object.
-    </ResponseField>
-
-  </Expandable>
-
-  <Expandable title="End-of-Call Report">
-
-    <ResponseField name="transcript" type="string">
-      This is the transcript of the call.
-    </ResponseField>
-
-    <ResponseField name="summary" type="string">
-      This is the summary of the call.
-    </ResponseField>
-
-    <ResponseField name="recordingUrl" type="string">
-      This is the URL for the call recording.
-    </ResponseField>
-
-  </Expandable>
-
-</ParamField>
-
-<ParamField body="voice" type="string" default="joseph">
-  This is the voice that will be used. Options are `joseph`, `phillip`, `sarah`,
-  `joanne`, `mark`, and `maya`.
-</ParamField>
-
-<ParamField body="model" type="string" default="gpt-4">
-  This is the OpenAI model to use. Options are gpt-3.5-turbo, gpt-3.5-turbo-16k,
-  gpt-4, and gpt-4-32k. GPT-4 is strongly recommended.
-</ParamField>
-
-<ParamField body="functions" type="array" default="null">
-  These are the functions that the AI can invoke during the call.
-
-  <Expandable title="Function">
-
-    <ResponseField name="name" type="string">
-      This is the the name of the function to be called. Must be a-z, A-Z, 0-9, or contain
-      underscores and dashes, with a maximum length of 64.
-    </ResponseField>
-
-    <ResponseField name="description" type="boolean">
-      This is a description of what the function does, used by the AI to choose when and how
-      to call the function.
-    </ResponseField>
-
-    <ResponseField name="parameters" type="object">
-      These are the parameters the functions accepts, described as a JSON Schema object. See the [OpenAI guide](https://platform.openai.com/docs/guides/gpt/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema) for documentation about the format.
-
-      To describe a function that accepts no parameters, provide the value `{"type": "object", "properties": {}}`.
-    </ResponseField>
-
-  </Expandable>
-
-</ParamField>
-
-<ParamField body="startTalking" type="boolean" default="false">
-  This controls whether AI speaks first.
-</ParamField>
-
-### Request headers
-
-<ParamField
-  header="Content-Type"
-  required
-  placeholder="application/json"
-  initialValue="application/json"
-></ParamField>
-
-### Response
-
-<ResponseField name="status" type="string">
-  Indicates whether the call was successful.
-</ResponseField>
-
-<ResponseExample>
-
-```json Response Example
-{
-  "status": "ok"
-}
-```
-
-</ResponseExample>

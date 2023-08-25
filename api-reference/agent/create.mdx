@@ -1,0 +1,29 @@
+---
+title: "Create Agent"
+api: "POST /agent"
+description: "This endpoint allows you to create an agent. You need to the provide context and phone number."
+---
+
+<Snippet file="agent.definition.mdx" />
+
+## Request
+
+### Body
+
+<Snippet file="agent.body.mdx" />
+
+### Header
+
+<ParamField
+  header="Content-Type"
+  required
+  placeholder="application/json"
+></ParamField>
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="agentId" type="string">
+  This is the unique identifier of the agent you created.
+</ResponseField>

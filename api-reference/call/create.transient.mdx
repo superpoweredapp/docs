@@ -1,0 +1,41 @@
+---
+title: "Create Call—agent"
+api: "POST /call"
+description: "This endpoint allows you to start a call while defining agent details on the fly. You need to provide who to call and your agent configuration."
+---
+
+<Snippet file="agent.definition.mdx" />
+<Tip>
+  Using the same agent repeatedly? [Save it](/api-reference/agent/create). Then,
+  [create call with agentId](/api-reference/call/create).
+</Tip>
+
+## Request
+
+### Body
+
+<ParamField body="to" type="string" required>
+  This is the number to call.
+</ParamField>
+
+<ParamField body="agent" type="object" required>
+  <Expandable title="Agent">
+    <Snippet file="agent.body.mdx" />
+  </Expandable>
+</ParamField>
+
+### Header
+
+<ParamField
+  header="Content-Type"
+  required
+  placeholder="application/json"
+></ParamField>
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="status" type="string">
+  This indicates whether the call was successful.
+</ResponseField>

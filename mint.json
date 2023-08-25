@@ -20,8 +20,33 @@
   },
   "navigation": [
     {
-      "group": "",
+      "group": "Getting Started",
       "pages": ["welcome", "auth", "call", "support"]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        {
+          "group": "Agent",
+          "pages": [
+            "api-reference/agent/create",
+            "api-reference/agent/get",
+            "api-reference/agent/update",
+            "api-reference/agent/delete"
+          ]
+        },
+        {
+          "group": "Call",
+          "pages": [
+            "api-reference/call/create",
+            "api-reference/call/create.transient"
+          ]
+        },
+        {
+          "group": "Token",
+          "pages": ["api-reference/token/create"]
+        }
+      ]
     }
   ],
   "modeToggle": {

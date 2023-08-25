@@ -1,0 +1,31 @@
+---
+title: "Create Token"
+api: "POST /token"
+description: "This endpoint allows you send an API token to your email. You need to provide an email address."
+---
+
+<Warning>Keep your API token a secret.</Warning>
+
+Never share your API token with others or reveal it in client-side code such as browsers or apps. Route all production requests through your own backend server, where you can safely load your API token from an environment variable or a key management service.
+
+## Request
+
+### Body
+
+<ParamField body="email" type="string" required>
+  This is the email that will receive the API token.
+</ParamField>
+
+### Header
+
+<ParamField
+  header="Content-Type"
+  required
+  placeholder="application/json"
+></ParamField>
+
+## Response
+
+<ResponseField name="status" type="string">
+  This indicates whether the token was successfully sent to the email address.
+</ResponseField>

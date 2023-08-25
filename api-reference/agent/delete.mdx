@@ -1,0 +1,23 @@
+---
+title: "Delete Agent"
+api: "DELETE /agent/{agentId}"
+description: "This endpoint allows you to delete an existing agent. You need to provide the agent's unique identifier."
+---
+
+## Request
+
+### Path
+
+<ParamField path="agentId" type="string" required placeholder="YOUR_AGENT_ID">
+  This is the unique identifier of the agent you want to delete.
+</ParamField>
+
+### Header
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="status" type="string">
+  This indicates whether the deletion was successful.
+</ResponseField>

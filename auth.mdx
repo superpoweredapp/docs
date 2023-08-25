@@ -4,15 +4,17 @@ icon: "circle-1"
 iconType: "solid"
 sidebarTitle: "Get Access"
 api: "POST /token"
-description: "Enter your email and click `Send Request`. You'll receive a token in your email. After you receive the token, [try the API](/call)."
+description: "Fill in your `email` and click `Send Request`. You'll receive an email with the token in a couple of seconds. After, [try the API](/call)."
 ---
 
-### Request Body
+<Warning>Keep your API token a secret.</Warning>
+
+Never share your API token with others or reveal it in client-side code such as browsers
+or apps. Route all production requests through your own backend server, where you
+can safely load your API token from an environment variable or a key management service.
+
+#### Request
 
 <ParamField body="email" type="string" required>
   This is the email that will receive the API token.
 </ParamField>
-
-<Warning>Keep your API token a secret.</Warning>
-
-Never share your API token with others or reveal it in client-side code such as browsers or apps. Route all production requests through your own backend server, where you can safely load your API token from an environment variable or a key management service.

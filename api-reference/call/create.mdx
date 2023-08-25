@@ -1,0 +1,33 @@
+---
+title: "Create Call—agentId"
+api: "POST /call"
+description: "This endpoint allows you to start a call. You need to provide who to call and the agent to use."
+---
+
+## Request
+
+### Body
+
+<ParamField body="to" type="string" required>
+  This is the number to call.
+</ParamField>
+
+<ParamField body="agentId" type="string" required>
+  This is the unique identifier of the agent.
+</ParamField>
+
+### Header
+
+<ParamField
+  header="Content-Type"
+  required
+  placeholder="application/json"
+></ParamField>
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="status" type="string">
+  This indicates whether the call was successful.
+</ResponseField>

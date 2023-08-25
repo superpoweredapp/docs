@@ -1,0 +1,22 @@
+---
+title: "Get Agents"
+api: "GET /agent"
+description: "This endpoint allows you to retrieve the details of your existing agents."
+---
+
+## Request
+
+### Header
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="agents" type="array">
+  <Expandable title="Agent">
+    <ParamField body="id" type="string" required>
+      This is the unique identifier of the agent.
+    </ParamField>
+    <Snippet file="agent.body.mdx" />
+  </Expandable>
+</ResponseField>
