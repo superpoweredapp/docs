@@ -7,17 +7,12 @@ api: "POST /call"
 description: "After you [get access](/auth), fill in your `token`, fill in your number in `to`, and click `Send Request`. You'll receive a call from Vapi."
 ---
 
-<Tip>
-  Next, try calling yourself with a [custom
-  agent](/api-reference/call/create.transient).
-</Tip>
-
 #### Request
 
-<ParamField body="token" type="string" required>
+<ParamField body="token" type="string" required placeholder="YOUR_API_TOKEN">
   This is the API token you were emailed in the [previous step](/auth).
 </ParamField>
 
-<ParamField body="to" type="string" required>
+<ParamField body="to" type="string" required placeholder="YOUR_PHONE_NUMBER">
   This is the number to call.
 </ParamField>

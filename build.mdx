@@ -1,0 +1,31 @@
+---
+title: "You're ready to build on the API 🏗️"
+icon: "circle-3"
+iconType: "solid"
+sidebarTitle: "Build on the API"
+---
+
+### There's just 2 concepts
+
+<CardGroup cols={2}>
+  <Card
+    title="Agent"
+    icon="square-1"
+    color="#ea5a0c"
+    href="/api-reference/agent"
+  ></Card>
+  <Card
+    title="Call"
+    icon="square-2"
+    color="#0285c7"
+    href="/api-reference/call"
+  ></Card>
+</CardGroup>
+
+#### [`Agent`](/api-reference/agent)
+
+An agent is an AI that can talk. You can specify its context, voice, and other properties. You can use an agent when placing an outbound call. You can also assign an agent a phoneNumber for inbound calls.
+
+#### [`Call`](/api-reference/call)
+
+A call does exactly what it says on the tin. It will initiate an outbound call to the phone number you specify. While starting a call, you can create an agent [on the fly](/api-reference/call/create.transient), or use [an existing one](/api-reference/call/create).

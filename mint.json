@@ -21,7 +21,7 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": ["welcome", "auth", "call", "support"]
+      "pages": ["welcome", "auth", "try", "build", "support"]
     },
     {
       "group": "API Reference",
@@ -44,7 +44,7 @@
         },
         {
           "group": "Token",
-          "pages": ["api-reference/token/create"]
+          "pages": ["api-reference/token/get"]
         }
       ]
     }

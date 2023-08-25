@@ -1,10 +1,10 @@
 ---
-title: "Get access to the API 🚀"
+title: "Get access to the API 🤝"
 icon: "circle-1"
 iconType: "solid"
 sidebarTitle: "Get Access"
-api: "POST /token"
-description: "Fill in your `email` and click `Send Request`. You'll receive an email with an API token in a couple of seconds. After, [try the API](/call)."
+api: "GET /token"
+description: "Fill in your `email` and click `Send Request`. You'll receive an email with an API token in a couple of seconds. After, [try the API](/try)."
 ---
 
 <Warning>Keep your API token a secret.</Warning>
@@ -15,6 +15,11 @@ can safely load your API token from an environment variable or a key management 
 
 #### Request
 
-<ParamField body="email" type="string" required>
+<ParamField
+  query="email"
+  type="string"
+  required
+  placeholder="YOUR_EMAIL_ADDRESS"
+>
   This is the email that will receive the API token.
 </ParamField>

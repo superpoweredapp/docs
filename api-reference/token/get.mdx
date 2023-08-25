@@ -1,6 +1,6 @@
 ---
-title: "Create Token"
-api: "POST /token"
+title: "Get Token"
+api: "GET /token"
 description: "This endpoint allows you send an API token to your email. You need to provide an email address."
 ---
 
@@ -12,17 +12,9 @@ Never share your API token with others or reveal it in client-side code such as 
 
 ### Body
 
-<ParamField body="email" type="string" required>
+<ParamField query="email" type="string" required>
   This is the email that will receive the API token.
 </ParamField>
-
-### Header
-
-<ParamField
-  header="Content-Type"
-  required
-  placeholder="application/json"
-></ParamField>
 
 ## Response
 
