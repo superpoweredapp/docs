@@ -16,3 +16,9 @@ description: "After you [get access](/auth), fill in your `token`, fill in your 
 <ParamField body="to" type="string" required placeholder="YOUR_PHONE_NUMBER">
   This is the number to call.
 </ParamField>
+
+<ParamField body="agent" type="object" required>
+  <Expandable title="Agent">
+    <Snippet file="agent.body.mdx" />
+  </Expandable>
+</ParamField>
