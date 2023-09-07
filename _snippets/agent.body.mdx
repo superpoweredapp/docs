@@ -61,11 +61,11 @@
   </Expandable>
 
   <Expandable title="GET: Agent Context">
-    For providing the agent's context, respond with a JSON object of the context: `{ context: "You are an assistant..." }`.
+    For providing the agent's context, respond with a object including the context: `{ context: "You are an assistant..." }`.
 
-    <RequestField name="context" type="string">
+    <ResponseField name="context" type="string">
       This is the AI's objective and the context around the objective.
-    </RequestField>
+    </ResponseField>
 
   </Expandable>
 </ParamField>
