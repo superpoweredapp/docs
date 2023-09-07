@@ -33,7 +33,9 @@
   This is the URL Vapi will send GET / POST requests for retrieving context, function calling, and end-of-call reports. All requests will be sent with `userPhoneNumber`, `botPhoneNumber`, and all the agent parameters.
 
   <Expandable title="POST: Function Calling">
-    For function calling, respond with a JSON object of the result. If empty, return `{}`.
+    For function calling, respond with a JSON object of the result. For example: `{ result: "Hello world!" }` or `{ result: { temperature: "38 degrees" } }`.
+    
+    If empty, return `{}`.
 
     <ResponseField name="name" type="string">
       This is the name of the function the agent wants to invoke.
