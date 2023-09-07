@@ -22,12 +22,18 @@
   This is the number the agent will transfer to if it runs into any issues.
 </ParamField>
 
+<ParamField body="getContextFromCallback" type="boolean" default="false">
+  Whether to get the retrieve the agent's context from the callback URL prior to
+  starting the call. If true, the context parameter will be ignored. You can use
+  this to customize the agent's context based on the caller's phone number, or
+  to retrieve the context from a database.
+</ParamField>
+
 <ParamField body="callbackUrl" type="string" default="null">
-  This is the URL Vapi will send POST requests to for function calling and end-of-call reports.
+  This is the URL Vapi will send GET / POST requests for retrieving context, function calling, and end-of-call reports. All requests will be sent with `userPhoneNumber`, `botPhoneNumber`, and all the agent parameters.
 
-For function calling, respond with a JSON object of the result. If empty, return `{}`.
-
-  <Expandable title="Function Calling Callback Object">
+  <Expandable title="POST: Function Calling">
+    For function calling, respond with a JSON object of the result. If empty, return `{}`.
 
     <ResponseField name="name" type="string">
       This is the name of the function the agent wants to invoke.
@@ -39,8 +45,7 @@ For function calling, respond with a JSON object of the result. If empty, return
 
   </Expandable>
 
-  <Expandable title="End-of-Call Report Callback Object">
-
+  <Expandable title="POST: End-of-Call Report">
     <ResponseField name="transcript" type="string">
       This is the transcript of the call.
     </ResponseField>
@@ -55,11 +60,19 @@ For function calling, respond with a JSON object of the result. If empty, return
 
   </Expandable>
 
+  <Expandable title="GET: Agent Context">
+    For providing the agent's context, respond with a JSON object of the context: `{ context: "You are an assistant..." }`.
+
+    <RequestField name="context" type="string">
+      This is the AI's objective and the context around the objective.
+    </RequestField>
+
+  </Expandable>
 </ParamField>
 
 <ParamField body="voice" type="string" default="phillip">
-  This is the voice that will be used. Options are `ryan`, `phillip`, `joseph`,
-  `sarah`, `joanne`, `mark`, and `maya`.
+  This is the voice that will be used. Options are `ryan`, `steve`, `burt`,
+  `phillip`, `joseph`, `sarah`, `joanne`, `mark`, and `maya`.
 </ParamField>
 
 <ParamField body="model" type="string" default="gpt-4">
