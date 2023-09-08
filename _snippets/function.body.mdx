@@ -1,0 +1,21 @@
+<ParamField
+    body="name"
+    type="string"
+    required
+>
+    This is the the name of the function to be called. Must be a-z, A-Z, 0-9, or contain
+    underscores and dashes, with a maximum length of 64.
+</ParamField>
+<ParamField
+    body="description"
+    type="string"
+>
+    This is a description of what the function does, used by the AI to choose when and how
+    to call the function.
+</ParamField>
+<ParamField body="parameters" type="object">
+    These are the parameters the functions accepts, described as a JSON Schema object. See the [OpenAI guide](https://platform.openai.com/docs/guides/gpt/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema) for documentation about the format.
+
+    To describe a function that accepts no parameters, provide the value `{"type": "object", "properties": {}}`.
+
+</ParamField>
