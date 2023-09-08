@@ -36,7 +36,7 @@
           ]
         },
         {
-          "group": "Inbound Phone",
+          "group": "InboundPhone",
           "pages": [
             "api-reference/inbound_phone/create",
             "api-reference/inbound_phone/get",
@@ -45,7 +45,7 @@
           ]
         },
         {
-          "group": "Outbound Call",
+          "group": "OutboundCall",
           "pages": [
             "api-reference/outbound_call/create",
             "api-reference/outbound_call/create.transient"
