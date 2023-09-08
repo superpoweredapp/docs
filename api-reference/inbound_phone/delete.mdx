@@ -1,0 +1,23 @@
+---
+title: "Delete Inbound Phone"
+api: "DELETE /inbound_phone/{id}"
+description: "This endpoint allows you to delete an inbound phone number configuration."
+---
+
+## Request
+
+### Path
+
+<ParamField path="id" type="string" required placeholder="INBOUND_PHONE_ID">
+  This is the unique identifier of the inbound phone you want to delete.
+</ParamField>
+
+### Header
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="status" type="string">
+  This indicates whether the deletion was successful.
+</ResponseField>

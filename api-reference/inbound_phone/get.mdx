@@ -1,0 +1,22 @@
+---
+title: "Get Inbound Phones"
+api: "GET /inbound_phone"
+description: "This endpoint allows you to retrieve your existing agents."
+---
+
+## Request
+
+### Header
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="inbound_phones" type="array">
+  <Expandable title="Agent">
+    <ParamField body="id" type="string" required>
+      This is the unique identifier of the inbound phone.
+    </ParamField>
+    <Snippet file="inbound_phone.body.mdx" />
+  </Expandable>
+</ResponseField>

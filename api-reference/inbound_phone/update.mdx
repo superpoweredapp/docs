@@ -1,0 +1,33 @@
+---
+title: "Update Inbound Phone"
+api: "PUT /{id}"
+description: "This endpoint allows you to update an existing inbound phone. You need to provide the inbound phone's unique identifier and updated configuration."
+---
+
+## Request
+
+### Path
+
+<ParamField path="id" type="string" required placeholder="INBOUND_PHONE_ID">
+  This is the unique identifier of the inbound phone you want to update.
+</ParamField>
+
+### Body
+
+<Snippet file="inbound_phone.body.mdx" />
+
+### Header
+
+<ParamField
+  header="Content-Type"
+  required
+  placeholder="application/json"
+></ParamField>
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="status" type="string">
+  This indicates whether the update was successful.
+</ResponseField>

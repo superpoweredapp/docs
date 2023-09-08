@@ -1,0 +1,27 @@
+---
+title: "Create Inbound Phone"
+api: "POST /inbound_phone"
+description: "This endpoint allows you to set up an inbound phone number to receive calls. This endpoint will automatically configure the Twilio phone number with Vapi."
+---
+
+## Request
+
+### Body
+
+<Snippet file="inbound_phone.body.mdx" />
+
+### Header
+
+<ParamField
+  header="Content-Type"
+  required
+  placeholder="application/json"
+></ParamField>
+
+<Snippet file="authorization.header.mdx" />
+
+## Response
+
+<ResponseField name="id" type="string">
+  This is the unique identifier of the inbound phone you created.
+</ResponseField>
