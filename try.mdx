@@ -3,7 +3,7 @@ title: "Try calling yourself now 📞"
 icon: "circle-2"
 iconType: "solid"
 sidebarTitle: "Try the API"
-api: "POST /outbound_call"
+api: "POST /outbound_call/demo"
 description: "After you [get access](/auth), fill in your `token`, fill in your number in `userPhoneNumber`, and click `Send Request`. You'll receive a call from Vapi."
 ---
 
@@ -13,10 +13,11 @@ description: "After you [get access](/auth), fill in your `token`, fill in your 
   This is the API token you were emailed in the [previous step](/auth).
 </ParamField>
 
-<Snippet file="outbound_call.body.mdx" />
-
-<ParamField body="agent" type="object" required>
-  <Expandable title="Agent">
-    <Snippet file="agent.body.mdx" />
-  </Expandable>
+<ParamField
+  body="userPhoneNumber"
+  type="string"
+  required
+  placeholder="YOUR_PHONE_NUMBER"
+>
+  This is the phone number you want to receive a call on.
 </ParamField>
