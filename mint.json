@@ -28,8 +28,8 @@
       "pages": ["auth", "try"]
     },
     {
-      "group": "Phone Calling",
-      "pages": ["outbound", "inbound"]
+      "group": "Building",
+      "pages": ["build", "agents", "outbound", "inbound"]
     },
     {
       "group": "API Reference",
