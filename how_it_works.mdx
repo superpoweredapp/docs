@@ -29,7 +29,7 @@ If `getContextFromCallback` is enabled and a call begins, the agent will make a 
 
 ### Function Calling
 
-Vapi fully supports [OpenAI's function calling API](https://platform.openai.com/docs/guides/gpt/function-calling), so you can have agents ping your server to perform actions like sending emails, retrieve information, and more. GPT4 will automatically determine what functions to call based on the context you provide and the user's input.
+Vapi fully supports [OpenAI's function calling API](https://platform.openai.com/docs/guides/gpt/function-calling), so you can have agents ping your server to perform actions like sending emails, retrieve information, and more. GPT-4 will automatically determine what functions to call based on the context you provide and the user's input.
 
 If `functions` are defined on the agent, it will use the `callbackUrl` to make a `POST` request with the following body:
 
