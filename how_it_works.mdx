@@ -5,17 +5,17 @@ sidebarTitle: "How it works"
 
 The [API](/api-reference) is the main way to interact with the platform. It allows you to create and manage agents, place outbound calls, and receive inbound calls.
 
-## [Agents](/api-reference/agent)
+# [Agents](/api-reference/agent)
 
 `Agent` is a fancy word for an AI configuration that can be used in both inbound and outbound phone calls. (Coming soon, you'll also be able to use your agents on web with a snippet!)
 
 You can specify the agent's voice, context, and other properties. You can use an agent's `id` when placing an outbound call or create an `InboundPhone` number that will use the agent when receiving inbound calls.
 
-### Callback URL
+## Callback URL
 
 As part of the `Agent`, you can specify a `callbackUrl`. This is your server's URL that the agent will use when retreiving context, performing function calls, and sending call summaries / recordings.
 
-#### Retreiving Context
+### Retreiving Context
 
 If you need to customize the agent's context based on who the user is, or to retrieve context from your database, you can enable `getContextFromCallback` when creating an agent.
 
@@ -27,7 +27,7 @@ If `getContextFromCallback` is enabled and a call begins, the agent will make a 
 }
 ```
 
-#### Function Calling
+### Function Calling
 
 Vapi fully supports OpenAI's function calling API, so you can have agents ping your server to perform actions like sending emails, retrieve information, and more. GPT4 will automatically determine what functions to call based on the context and the user's input.
 
@@ -43,7 +43,7 @@ Your server should respond with a JSON object containing the function's response
 }
 ```
 
-#### End of Call Report
+### End of Call Report
 
 When a call ends, the agent will make a `POST` request to the `callbackUrl` with the following body:
 
