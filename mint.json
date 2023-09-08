@@ -36,10 +36,19 @@
           ]
         },
         {
-          "group": "Call",
+          "group": "Inbound Phone",
           "pages": [
-            "api-reference/call/create",
-            "api-reference/call/create.transient"
+            "api-reference/inbound_phone/create",
+            "api-reference/inbound_phone/get",
+            "api-reference/inbound_phone/update",
+            "api-reference/inbound_phone/delete"
+          ]
+        },
+        {
+          "group": "Outbound Call",
+          "pages": [
+            "api-reference/outbound_call/create",
+            "api-reference/outbound_call/create.transient"
           ]
         },
         {
