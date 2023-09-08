@@ -13,6 +13,10 @@ description: "After you [get access](/auth), fill in your `token`, fill in your 
   This is the API token you were emailed in the [previous step](/auth).
 </ParamField>
 
-<ParamField body="to" type="string" required placeholder="YOUR_PHONE_NUMBER">
-  This is the number to call.
+<Snippet file="outbound_call.body.mdx" />
+
+<ParamField body="agent" type="object" required>
+  <Expandable title="Agent">
+    <Snippet file="agent.body.mdx" />
+  </Expandable>
 </ParamField>
