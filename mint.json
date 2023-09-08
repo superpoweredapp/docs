@@ -20,16 +20,16 @@
   },
   "navigation": [
     {
+      "group": "What is Vapi?",
+      "pages": ["welcome", "support"]
+    },
+    {
       "group": "Getting Started",
-      "pages": [
-        "welcome",
-        "auth",
-        "try",
-        "agents",
-        "outbound",
-        "inbound",
-        "support"
-      ]
+      "pages": ["auth", "try"]
+    },
+    {
+      "group": "Phone Calling",
+      "pages": ["outbound", "inbound"]
     },
     {
       "group": "API Reference",
