@@ -5,11 +5,11 @@ sidebarTitle: "How it works"
 
 The [API](/api-reference) is the main way to interact with the platform. It allows you to create and manage agents, place outbound calls, and receive inbound calls.
 
-# [Agents](/api-reference/agent)
+# Agents
 
 `Agent` is a fancy word for an AI configuration that can be used in both inbound and outbound phone calls. (Coming soon, you'll also be able to use your agents on web with a snippet!)
 
-You can specify the agent's voice, context, and other properties. You can use an agent's `id` when placing an outbound call or create an `InboundPhone` number that will use the agent when receiving inbound calls.
+You can specify the agent's voice, context, and other properties. You can use an agent's `id` when placing an outbound call or create an `InboundPhone` that will use the agent when receiving inbound calls.
 
 ## Callback URL
 
@@ -49,10 +49,14 @@ When a call ends, the agent will make a `POST` request to the `callbackUrl` with
 
 <Snippet file="end.body.mdx" />
 
-#### [`Agent`](/api-reference/agent)
+# Inbound Phone Calls
 
-An agent is an AI that can talk. You can specify its context, voice, and other properties. You can use an agent when placing an outbound call. You can also assign an agent a phoneNumber for inbound calls.
+An `InboundPhone` is a configuration that maps a phone number to an agent. When a call is received on the phone number, the agent will be used to handle the call.
 
-#### [`Call`](/api-reference/call)
+When creating an `InboundPhone`, it uses your Twilio API keys to configure the provided phone number to forward calls to Vapi. You can also specify a `forwardingPhoneNumber`, which the agent can use to forward the call to a human if it can't handle a request or a user asks.
 
-A call does exactly what it says on the tin. It will initiate an outbound call to the phone number you specify. While starting a call, you can create an agent [on the fly](/api-reference/call/create.transient), or use [an existing one](/api-reference/call/create).
+# Outbound Phone Calls
+
+An `OutboundCall` will initiate a phone call to the `userPhoneNumber` from the `twilioPhoneNumber`, with the provided agent.
+
+An [existing agent](/api-reference/call/create) can be specified by its `id`, or you can create a [transient agent](/api-reference/call/create.transient) on the fly.
