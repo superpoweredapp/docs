@@ -21,7 +21,15 @@
   "navigation": [
     {
       "group": "Getting Started",
-      "pages": ["welcome", "auth", "try", "build", "support"]
+      "pages": [
+        "welcome",
+        "auth",
+        "try",
+        "agents",
+        "outbound",
+        "inbound",
+        "support"
+      ]
     },
     {
       "group": "API Reference",
