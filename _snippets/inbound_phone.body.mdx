@@ -1,0 +1,28 @@
+<ParamField body="agentId" type="string" required>
+  The agentId is the `id` of the agent you'd like to assign to this phone
+  number.
+</ParamField>
+
+<ParamField body="twilioPhoneNumber" type="string" required>
+  This is the number to call from. Ensure this number is owned by your Twilio
+  account. Here's the guide to [buy a number on
+  Twilio](https://support.twilio.com/hc/en-us/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console).
+</ParamField>
+
+<ParamField body="twilioAccountSid" type="string" required>
+  This is your Twilio AccountSid. You can find it on your [Twilio
+  Console](https://www.twilio.com/console).
+</ParamField>
+
+<ParamField body="twilioAuthToken" type="string" required>
+  This is your Twilio AuthToken. You can find it on your [Twilio
+  Console](https://www.twilio.com/console).
+</ParamField>
+
+<ParamField body="startTalking" type="boolean" default="true">
+  Whether the AI should talk first when the call is connected.
+</ParamField>
+
+<ParamField body="forwardingPhoneNumber" type="string">
+  This is the number the agent will transfer to if it runs into any issues.
+</ParamField>

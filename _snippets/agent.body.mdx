@@ -1,5 +1,14 @@
+<ParamField body="name" type="string" required>
+  This is the agent's name, just for your reference.
+</ParamField>
+
 <ParamField body="context" type="string">
   This is the AI's objective and the context around the objective.
+</ParamField>
+
+<ParamField body="voice" type="string" default="phillip">
+  This is the voice that will be used. Options are `ryan`, `steve`, `burt`,
+  `phillip`, `joseph`, `sarah`, `joanne`, `mark`, and `maya`.
 </ParamField>
 
 <ParamField body="phoneNumber" type="string" required>
@@ -70,16 +79,6 @@
     </ResponseField>
 
   </Expandable>
-</ParamField>
-
-<ParamField body="voice" type="string" default="phillip">
-  This is the voice that will be used. Options are `ryan`, `steve`, `burt`,
-  `phillip`, `joseph`, `sarah`, `joanne`, `mark`, and `maya`.
-</ParamField>
-
-<ParamField body="model" type="string" default="gpt-4">
-  This is the OpenAI model to use. Options are gpt-3.5-turbo, gpt-3.5-turbo-16k,
-  gpt-4, and gpt-4-32k. GPT-4 is strongly recommended.
 </ParamField>
 
 <ParamField body="functions" type="array" default="[]">
