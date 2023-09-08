@@ -28,10 +28,6 @@
       "pages": ["auth", "try"]
     },
     {
-      "group": "Building",
-      "pages": ["build", "agents", "outbound", "inbound"]
-    },
-    {
       "group": "API Reference",
       "pages": [
         {
