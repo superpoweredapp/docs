@@ -21,7 +21,7 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["welcome", "support"]
+      "pages": ["welcome", "how_it_works", "support"]
     },
     {
       "group": "Getting Started",
