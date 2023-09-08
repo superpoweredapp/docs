@@ -20,7 +20,7 @@
   },
   "navigation": [
     {
-      "group": "What is Vapi?",
+      "group": "Welcome",
       "pages": ["welcome", "support"]
     },
     {
