@@ -7,8 +7,14 @@
 </ParamField>
 
 <ParamField body="voice" type="string" default="steve">
-  This is the voice that will be used. Options are `steve`, `joseph`, `myra`,
+  This is the voice that will be used. 
+  
+  Pro Voices: `steve`, `joseph`, `myra`,
   `paula`, `drew`, `phillip`, `paul`, and `mrb`.
+
+Basic Voices: `davis`, `jenny`, `aria`,
+`steffan`, `sara`, and `jason`.
+
 </ParamField>
 
 <ParamField body="getContextFromCallback" type="boolean" default="false">
@@ -16,6 +22,11 @@
   starting the call. If true, the context parameter will be ignored. You can use
   this to customize the agent's context based on the caller's phone number, or
   to retrieve the context from a database.
+</ParamField>
+
+<ParamField body="model" type="string" default="gpt-4">
+  This is the OpenAI model that will be used. Options are `gpt-4` and
+  `gpt-3.5-turbo`.
 </ParamField>
 
 <ParamField body="callbackUrl" type="string" default="null">
