@@ -4,6 +4,9 @@
 
 <ParamField body="context" type="string">
   This is the AI's objective and the context around the objective.
+
+If no context is present and `callbackUrl` is defined, Vapi will send a GET request to the callback URL to retrieve the context.
+
 </ParamField>
 
 <ParamField body="voice" type="string" default="steve">
@@ -15,13 +18,6 @@
 Basic Voices: `davis`, `jenny`, `aria`,
 `steffan`, `sara`, and `jason`.
 
-</ParamField>
-
-<ParamField body="getContextFromCallback" type="boolean" default="false">
-  Whether to get the retrieve the agent's context from the callback URL prior to
-  starting the call. If true, the context parameter will be ignored. You can use
-  this to customize the agent's context based on the caller's phone number, or
-  to retrieve the context from a database.
 </ParamField>
 
 <ParamField body="model" type="string" default="gpt-4">
